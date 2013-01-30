@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+   <title>AngularJS Demo</title>
+   <script type="text/javascript" src="http://code.angularjs.org/1.1.2/angular.min.js"></script>
+   <script type="text/javascript" src="http://code.angularjs.org/1.1.2/angular-resource.min.js"></script>
+   <script type="text/javascript" src="js/app.js"></script>
+   <link href="css/bootstrap.min.css" rel="stylesheet"/>
+   <link href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
+</head>
+<body ng-controller="listController">
+
+<h4>Search</h4>
+Country name: <input type="text" ng-model="search.name"/>
+
+<h4>Country list:</h4>
+
+<div class="container-fluid">
+   <table class="table table-bordered">
+      <thead>
+      <tr>
+         <th>
+             ISO code
+            (<a href ng-click="predicate='iso';reverse=true"><i class="icon-arrow-down"></i></a>)
+            (<a href ng-click="predicate='iso';reverse=false"><i class="icon-arrow-up"></i></a>)
+         </th>
+         <th>
+             Name
+            (<a href ng-click="predicate='name';reverse=true"><i class="icon-arrow-down"></i></a>)
+            (<a href ng-click="predicate='name';reverse=false"><i class="icon-arrow-up"></i></a>)
+         </th>
+         <th>External media page</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="country in countries | filter:search | orderBy:predicate:reverse">
+         <td>{{country.iso}}</td>
+         <td>{{country.name}}</td>
+         <td><a ng-href="{{country.name|wikipedia}}">Wikipedia</a></td>
+      </tr>
+      </tbody>
+   </table>
+</div>
+</body>
+</html>
