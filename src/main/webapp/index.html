@@ -9,6 +9,19 @@
 </head>
 <body ng-controller="listController">
 
+<h4>Add a country</h4>
+<span class="btn"  ng-hide="adding" ng-click="adding = true"><i class="icon-plus"></i></span>
+<div ng-show="adding">
+   <form name="addCountryForm" ng-submit="addCountry()">
+      ISO code: <input type="text" required ng-model="countryToAdd.iso"/>
+      Name: <input type="text" required ng-model="countryToAdd.name">
+      <input type="submit" ng-disabled="addCountryForm.$invalid" class="btn"/>
+   </form>
+</div>
+<div ng-show="error" class="alert alert-error">
+   <button type="button" ng-click="error = false">&times;</button>
+   {{errorMessage}}
+</div>
 <h4>Search</h4>
 Country name: <input type="text" ng-model="search.name"/>
 
@@ -19,12 +32,12 @@ Country name: <input type="text" ng-model="search.name"/>
       <thead>
       <tr>
          <th>
-             ISO code
+            ISO code
             (<a href ng-click="predicate='iso';reverse=true"><i class="icon-arrow-down"></i></a>)
             (<a href ng-click="predicate='iso';reverse=false"><i class="icon-arrow-up"></i></a>)
          </th>
          <th>
-             Name
+            Name
             (<a href ng-click="predicate='name';reverse=true"><i class="icon-arrow-down"></i></a>)
             (<a href ng-click="predicate='name';reverse=false"><i class="icon-arrow-up"></i></a>)
          </th>

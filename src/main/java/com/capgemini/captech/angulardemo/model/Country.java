@@ -16,4 +16,23 @@ public class Country {
       this.iso = iso;
       this.name = name;
    }
+
+   public Country() {super();}
+
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      Country country = (Country) o;
+
+      if (!iso.equals(country.iso)) return false;
+
+      return true;
+   }
+
+   @Override
+   public int hashCode() {
+      return iso.hashCode();
+   }
 }
