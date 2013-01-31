@@ -2,18 +2,18 @@
 
 var app = angular.module('app', ['ngResource']);
 
-app.controller('listController', function listController($scope) {
+app.controller('listController', function listController($scope, $http) {
     $scope.predicate = 'iso';
     $scope.reverse = 'false';
-    $scope.countries = [
-        {iso: 'FR', name: 'France'},
-        {iso: 'US', name: 'Etats-Unis'}
-    ];
+    $http.get('restapi/country').success(function(data){
+        $scope.countries = data;
+    })
 
     $scope.edit = function (client) {
         $scope.currentClient = client;
     }
 });
+
 
 app.filter('wikipedia', function () {
     return function (countryName) {
