@@ -22,6 +22,7 @@ app.controller('listController', function listController($scope, $http) {
                                      $http.get('restapi/country').success(function (data) {
                                          $scope.countries = data;
                                      });
+                                     $scope.countryToAdd = {};
                                      $scope.adding = false;
                                  })
                 .error(function(data, status){
