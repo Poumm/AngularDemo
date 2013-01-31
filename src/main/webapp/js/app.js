@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['ngResource']);
+var app = angular.module('app', []);
 
 app.controller('listController', function listController($scope, $http) {
     $scope.predicate = 'iso';
