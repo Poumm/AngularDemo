@@ -6,7 +6,7 @@
 
     <groupId>com.capgemini.captech</groupId>
     <artifactId>AngularDemo</artifactId>
-    <packaging>pom</packaging>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <build>
