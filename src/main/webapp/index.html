@@ -1,57 +1,94 @@
 <!DOCTYPE html>
-<html ng-app="app">
-<head>
-   <title>AngularJS Demo</title>
-   <script type="text/javascript" src="http://code.angularjs.org/1.1.2/angular.min.js"></script>
-   <script type="text/javascript" src="js/app.js"></script>
-   <link href="css/bootstrap.min.css" rel="stylesheet"/>
-   <link href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
-</head>
-<body ng-controller="listController">
+<html lang="fr" ng-app="app">
+    
+    <head>
+        <meta charset="utf-8">
+        <title> AngularJS Demo </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Le styles -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 40px; }
+        </style>
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 
-<h4>Add a country</h4>
-<span class="btn"  ng-hide="adding" ng-click="adding = true"><i class="icon-plus"></i></span>
-<div ng-show="adding">
-   <form name="addCountryForm" ng-submit="addCountry()">
-      ISO code: <input type="text" required ng-model="countryToAdd.iso"/>
-      Name: <input type="text" required ng-model="countryToAdd.name">
-      <input type="submit" ng-disabled="addCountryForm.$invalid" class="btn"/>
-   </form>
-</div>
-<div ng-show="error" class="alert alert-error">
-   <button type="button" ng-click="error = false">&times;</button>
-   {{errorMessage}}
-</div>
-<h4>Search</h4>
-Country name: <input type="text" ng-model="search.name"/>
+                      <span class="icon-bar"></span>
 
-<h4>Country list:</h4>
+                      <span class="icon-bar"></span>
 
-<div class="container-fluid">
-   <table class="table table-bordered">
-      <thead>
-      <tr>
-         <th>
-            ISO code
-            (<a href ng-click="predicate='iso';reverse=true"><i class="icon-arrow-down"></i></a>)
-            (<a href ng-click="predicate='iso';reverse=false"><i class="icon-arrow-up"></i></a>)
-         </th>
-         <th>
-            Name
-            (<a href ng-click="predicate='name';reverse=true"><i class="icon-arrow-down"></i></a>)
-            (<a href ng-click="predicate='name';reverse=false"><i class="icon-arrow-up"></i></a>)
-         </th>
-         <th>External media page</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr ng-repeat="country in countries | filter:search | orderBy:predicate:reverse">
-         <td>{{country.iso}}</td>
-         <td>{{country.name}}</td>
-         <td><a ng-href="{{country.name|wikipedia}}">Wikipedia</a></td>
-      </tr>
-      </tbody>
-   </table>
-</div>
-</body>
+                      <span class="icon-bar"></span>
+
+                    </a>
+                    <a class="brand" href="#">Angular-Demo</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="#/home">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="#/countries">Pays</a>
+                            </li>
+                            <li>
+                                <a href="#/addCountry">Ajout</a>
+                            </li>
+                            <li>
+                                <a href="#/contact">Contact</a>
+                            </li>
+                            <li>
+                                &nbsp;
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container" ng-controller="listController">
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        AngularJS + HTML5 + CSS3
+                    </h3>
+                    <p>
+                        Vous allez découvrir ici une présentation de l'utilisation de AngularJS
+                        accompagnat HTML5 et CSS3 pour la réalisation d'une simple application
+                        orientée Responsive-Design. Celle-ci permet aun affichage
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" ng-click="">Learn more &raquo;</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div ng-view></div>
+        </div>
+        <script type="text/javascript" src="http://code.angularjs.org/1.1.2/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap/bootstrap-transition.js"></script>
+        <script src="js/bootstrap/bootstrap-alert.js"></script>
+        <script src="js/bootstrap/bootstrap-modal.js"></script>
+        <script src="js/bootstrap/bootstrap-dropdown.js"></script>
+        <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+        <script src="js/bootstrap/bootstrap-tab.js"></script>
+        <script src="js/bootstrap/bootstrap-tooltip.js"></script>
+        <script src="js/bootstrap/bootstrap-popover.js"></script>
+        <script src="js/bootstrap/bootstrap-button.js"></script>
+        <script src="js/bootstrap/bootstrap-collapse.js"></script>
+        <script src="js/bootstrap/bootstrap-carousel.js"></script>
+        <script src="js/bootstrap/bootstrap-typeahead.js"></script>
+    </body>
 </html>
