@@ -4,15 +4,59 @@
 		<img class="thumbnail span3" style="float: left;"
 			src="img/responsive-illustrations.png"
 			title="How fit the Responsive Design with devices ?" />
-		<div class="span6">
-			<p>Vous allez découvrir ici une présentation de l'utilisation de
-				AngularJS accompagné de HTML5 et CSS3 pour la réalisation d'une
-				simple application orientée Responsive-Design grâce à
-				Twitter-Bootstrap.</p>
-			<p>Celle-ci permet un affichage adapté au desktop et au smart
-				devices.</p>
+		<div class="span8">
+			<p>
+				Vous allez découvrir ici une présentation de l'utilisation de <a
+					id="angularjs" rel="popover" href="http://www.angularjs.org/"
+					data-content="AngularJS est un framework javascript de Google !"
+					data-original-title="References">AngularJS</a> accompagné de <a
+					id="html5" rel="popover"
+					href="http://www.w3.org/html/wg/drafts/html/master/"
+					data-content="HTML5, Hyper Text Markup Language, version 5, spécifications du W3C"
+					data-original-title="References">HTML5</a> et <a id="css3"
+					rel="popover"
+					href="http://www.w3.org/TR/2001/WD-css3-roadmap-20010523/"
+					data-content="CSS3, Cascades Styles Sheet version 3, spécifications du W3C"
+					data-original-title="References">CSS3</a> pour la réalisation d'une
+				simple application orientée Responsive-Design grâce à <a
+					id="bootstrap" rel="popover"
+					data-content="Bootstrap, de  Wtitter, est uin kit de démarrage HTML5+CSS3 pour créer des pages compatibles avec ces standards, en traitant un grand nombre de particularités des différents navigateurs."
+					data-original-title="References" rel="popover"
+					href="http://twitter.github.com/bootstrap/">Twitter-Bootstrap</a>.
+			</p>
+			<p>
+				Celle-ci permet un affichage adapté au desktop et aux
+				<code id="smartdevice" rel="popover"
+					data-content="Sont désigné par SmartDevices tout appareil poratatif permettant la consultation d'information sur les réseaux. typiqement, un téléphone, une tablette, ou certains ultraportables font partie de cette famille de produits."
+					data-original-title="References">
+					<b>smart</b>devices. 
+			</p>
+			</code>
 			<p>
 		</div>
-		<a class="btn btn-primary btn-large" href="http://www.angularjs.org/">Learn more &raquo;</a>
+		<p class="span2 offset6">
+			<a class="btn btn-primary btn-large" href="http://www.angularjs.org/"
+				title="Lire a apprendre sur le site officiel.">Learn more
+				&raquo;</a>
+		</p>
 	</div>
+	<script>
+		$(function() {
+			$("#angularjs").popover({
+				placement : 'bottom'
+			});
+			$("#html5").popover({
+				placement : 'bottom'
+			});
+			$("#css3").popover({
+				placement : 'bottom'
+			});
+			$("#bootstrap").popover({
+				placement : 'bottom'
+			});
+			$("#smartdevice").popover({
+				placement : 'bottom'
+			});
+		});
+	</script>
 </div>
