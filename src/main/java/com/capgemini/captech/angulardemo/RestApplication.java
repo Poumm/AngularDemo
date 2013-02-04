@@ -11,7 +11,8 @@ import java.util.Set;
  */
 @ApplicationPath("/restapi")
 public class RestApplication extends Application {
-   @Override
+   @SuppressWarnings("unchecked")
+@Override
    public Set<Class<?>> getClasses() {
       return new HashSet<Class<?>>(Arrays.asList(CountryService.class));
    }
