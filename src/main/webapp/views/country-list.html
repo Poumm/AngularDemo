@@ -9,18 +9,14 @@
         <thead>
             <tr>
                 <th>
-                    ISO code (
-                    <a href ng-click="predicate='iso';reverse=true"><i class="icon-arrow-down"></i></a>
-                    ) (
-                    <a href ng-click="predicate='iso';reverse=false"><i class="icon-arrow-up"></i></a>
-                    )
+                    ISO code
+                    <a href ng-click="predicate='iso';reverse=true"  class="icon-arrow-down"></a>
+                	<a href ng-click="predicate='iso';reverse=false"  class="icon-arrow-up"></a>
                 </th>
                 <th>
-                    Name (
-                    <a href ng-click="predicate='name';reverse=true"><i class="icon-arrow-down"></i></a>
-                    ) (
-                    <a href ng-click="predicate='name';reverse=false"><i class="icon-arrow-up"></i></a>
-                    )
+                    Name 
+					<a href ng-click="predicate='name';reverse=true" class="icon-arrow-down"></a>
+                    <a href ng-click="predicate='name';reverse=false" class="icon-arrow-up"></a>
                 </th>
                 <th>
                     External media page
@@ -29,16 +25,23 @@
         </thead>
         <tbody>
             <tr ng-repeat="country in countries | filter:search | orderBy:predicate:reverse">
-                <td>
-                    {{country.iso}}
-                </td>
-                <td>
-                    {{country.name}}
-                </td>
-                <td>
-                    <a ng-href="{{country.name|wikipedia}}">Wikipedia</a>
-                </td>
+                <td>{{country.iso}}</td>
+                <td>{{country.name}}</td>
+                <td><a ng-href="{{country.name|wikipedia}}">Wikipedia</a></td>
             </tr>
         </tbody>
+        <tfoot>
+        	<tr>
+        		<td colspan="3">
+        		<div   style="float:left; width:40%;text-align:left;">Nombre de pays: {{countries.length}}</div>
+        		<div style="float:right; width:40%;text-align:right;">
+        		|<a href="#" class="icon-arrow-left" title="Première page"></a>&nbsp;
+        		<a href="#" class="icon-arrow-left" title="Page précédente"></a>&nbsp;
+        		<a href="#" class="icon-arrow-right" title="Page suivante"></a>&nbsp;
+        		<a href="#" class="icon-arrow-right" title="Dernière page"></a>|
+        		</div>
+        		</td>
+        	</tr>
+        </tfoot>
     </table>
 </div>
