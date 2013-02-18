@@ -1,7 +1,5 @@
 <div class="container-fluid">
-    <h4>
-        Country list:
-    </h4>
+    <h4>Countries</h4>
     <form class="pull-left">
         <input type="text" class="search-query" placeholder="Search" ng-model="search.name">
     </form>
@@ -10,16 +8,19 @@
             <tr>
                 <th>
                     ISO code
-                    <a href ng-click="predicate='iso';reverse=true"  class="icon-arrow-down"></a>
-                	<a href ng-click="predicate='iso';reverse=false"  class="icon-arrow-up"></a>
+                    <a href="#" ng-click="predicate='iso';reverse=true"  class="icon-arrow-down"></a>
+                	<a href="#" ng-click="predicate='iso';reverse=false"  class="icon-arrow-up"></a>
                 </th>
                 <th>
                     Name 
-					<a href ng-click="predicate='name';reverse=true" class="icon-arrow-down"></a>
-                    <a href ng-click="predicate='name';reverse=false" class="icon-arrow-up"></a>
+					<a href="#" ng-click="predicate='name';reverse=true" class="icon-arrow-down"></a>
+                    <a href="#" ng-click="predicate='name';reverse=false" class="icon-arrow-up"></a>
                 </th>
                 <th>
                     External media page
+                </th>
+                <th>
+                	Actions
                 </th>
             </tr>
         </thead>
@@ -28,17 +29,18 @@
                 <td>{{country.iso}}</td>
                 <td>{{country.name}}</td>
                 <td><a ng-href="{{country.name|wikipedia}}">Wikipedia</a></td>
+                <td><a href="#/country/edit/{{country.iso}}" class="icon-edit"></a></td>
             </tr>
         </tbody>
         <tfoot>
         	<tr>
-        		<td colspan="3">
+        		<td colspan="4">
         		<div   style="float:left; width:40%;text-align:left;">Nombre de pays: {{countries.length}}</div>
         		<div style="float:right; width:40%;text-align:right;">
-        		|<a href="#" class="icon-arrow-left" title="Première page"></a>&nbsp;
-        		<a href="#" class="icon-arrow-left" title="Page précédente"></a>&nbsp;
-        		<a href="#" class="icon-arrow-right" title="Page suivante"></a>&nbsp;
-        		<a href="#" class="icon-arrow-right" title="Dernière page"></a>|
+	        		|<a href="#" class="icon-arrow-left" title="Première page"></a>&nbsp;
+	        		<a href="#" class="icon-arrow-left" title="Page précédente"></a>&nbsp;
+	        		<a href="#" class="icon-arrow-right" title="Page suivante"></a>&nbsp;
+	        		<a href="#" class="icon-arrow-right" title="Dernière page"></a>|
         		</div>
         		</td>
         	</tr>

@@ -35,9 +35,54 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+
+
+
+			<plugin>
+				<groupId>com.sun.jersey.contribs</groupId>
+				<artifactId>maven-wadl-plugin</artifactId>
+				<version>1.17</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>${javadoc-phase}</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<wadlFile>${project.build.outputDirectory}/application.wadl</wadlFile>
+					<wadlFile>${basedir}/src/main/resources/application.wadl</wadlFile>
+					<formatWadlFile>true</formatWadlFile>
+					<baseUri>http://localhost:8080/restapi</baseUri>
+					<packagesResourceConfig>
+						<param>com.capgemini.captech.angulardemo</param>
+					</packagesResourceConfig>
+					<wadlGenerators>
+						<wadlGeneratorDescription>
+							<className>com.sun.jersey.server.wadl.generators.WadlGeneratorApplicationDoc</className>
+							<properties>
+								<property>
+									<name>applicationDocsFile</name>
+									<value>${basedir}/src/main/resources/application-doc.xml</value>
+								</property>
+							</properties>
+						</wadlGeneratorDescription>
+						<wadlGeneratorDescription>
+							<className>com.sun.jersey.server.wadl.generators.WadlGeneratorGrammarsSupport</className>
+							<properties>
+								<property>
+									<name>grammarsFile</name>
+									<value>${basedir}/src/main/resources/application-grammars.xml</value>
+								</property>
+							</properties>
+						</wadlGeneratorDescription>
+					</wadlGenerators>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 
 	<dependencies>
 		<dependency>

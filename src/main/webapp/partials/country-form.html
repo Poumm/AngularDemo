@@ -1,0 +1,28 @@
+<div class="row">
+	<form class="well" name="countryForm" ng-submit="addCountry()">
+		<fieldset>
+			<legend>Add a Country</legend>
+			<div class="control-group">
+				<label>ISO code:</label> <input type="text" class="" required
+					ng-model="country.iso" /> <label>Name:</label> <input type="text"
+					class="" required ng-model="country.name">
+				<div class="controls">
+					<input type="submit" class="btn btn-success"
+						ng-disabled="countryForm.$invalid" class="btn btn-success" /> <input
+						type="button" class="btn btn-warning" value="Annuler"
+						ng-click="goList()" />
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+
+	<div ng-show="error" class="alert alert-error">
+		<button type="button" ng-click="error = false">&times;</button>
+		{{errorMessage}}
+	</div>
+	<div ng-show="warn" class="alert warn-error">
+		<button type="button" ng-click="warn = false">&times;</button>
+		{{warnMessage}}
+	</div>
+</div>
