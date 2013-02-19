@@ -11,9 +11,6 @@ Size and display are auto-adaptive to user device.
 
     mvn compile com.sun.jersey.contribs:maven-wadl-plugin:generate
 
-
-
-
 MVC is back on Web-browser with angularJS to keep control on what happened on the client side.
 
 Anatomy of the demonstration :
