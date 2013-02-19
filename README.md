@@ -1,4 +1,4 @@
-### AngularDemo
+### AngularDemo  [![Build Status](https://travis-ci.org/cap-tech/AngularDemo.png)](https://travis-ci.org/cap-tech/AngularDemo)
 
 A small demonstration of capabilities enabled with AngularJS, HTML5 and CSS3, through the power of Twitter-Bootstrap, 
 performing "Responsive Display" on standard browser and on Smart devices.
